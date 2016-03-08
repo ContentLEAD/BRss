@@ -49,7 +49,6 @@ jQuery.getFeed = function(options) {
             url: 'http://tech.brafton.com/brss/proxy.php?url=' + options.url,
             data: options.data,
             cache: options.cache,
-            dataType: (jQuery.browser.msie) ? "text" : "xml",
             success: function(xml) {
                 var feed = new JFeed(xml);
                 if (jQuery.isFunction(options.success)) options.success(feed);
@@ -83,12 +82,6 @@ JFeed.prototype = {
     image: '',
     author: '',
     parse: function(xml) {
-
-        if (jQuery.browser.msie) {
-            var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-            xmlDoc.loadXML(xml);
-            xml = xmlDoc;
-        }
 
         if (jQuery('channel', xml).length == 1) {
 

@@ -2,7 +2,7 @@ $.fn.extend({
     BraftonRss: function(obj){
         obj.container = this;
         jQuery.getFeed({
-        url: 'http://tech.brafton.com/brss/py/brss.py?url=' + obj.url,
+        url: 'http://tech.brafton.com/brss/proxy.php?url=' + obj.url,
         dateformat: obj.dateformat,
         container: obj.container,
         image: obj.image,
