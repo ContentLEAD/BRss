@@ -46,7 +46,7 @@ jQuery.getFeed = function(options) {
 
         return $.ajax({
             type: 'GET',
-            url: 'http://tech.brafton.com/brss/proxy.php?url=' + options.url,
+            url: options.url,
             data: options.data,
             cache: options.cache,
             success: function(xml) {

@@ -128,7 +128,7 @@ $.fn.extend({
                 html += '</div>'
             }
             
-            jQuery('#result').append(html);
+            jQuery(obj.container).append(html);
 
             if (this.container) {
                 html += '</div>';

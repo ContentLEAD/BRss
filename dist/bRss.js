@@ -128,7 +128,7 @@ $.fn.extend({
                 html += '</div>'
             }
             
-            jQuery('#result').append(html);
+            jQuery(obj.container).append(html);
 
             if (this.container) {
                 html += '</div>';
@@ -137,6 +137,7 @@ $.fn.extend({
     });
 }
 });
+/*
 jQuery(function() {
     $("#result").BraftonRss({
                url: 'http://www.brafton.com/blog/feed/',
@@ -153,7 +154,8 @@ jQuery(function() {
              style: 'grid',
              count: '3'
     });
-});;function JAtom(xml) {
+});
+*/;function JAtom(xml) {
     this._parse(xml);
 };
 
@@ -237,7 +239,7 @@ jQuery.getFeed = function(options) {
 
         return $.ajax({
             type: 'GET',
-            url: 'http://tech.brafton.com/brss/proxy.php?url=' + options.url,
+            url: options.url,
             data: options.data,
             cache: options.cache,
             success: function(xml) {
