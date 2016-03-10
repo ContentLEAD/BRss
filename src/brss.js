@@ -137,6 +137,7 @@ $.fn.extend({
     });
 }
 });
+/*
 jQuery(function() {
     $("#result").BraftonRss({
                url: 'http://www.brafton.com/blog/feed/',
@@ -154,3 +155,4 @@ jQuery(function() {
              count: '3'
     });
 });
+*/
