@@ -1,6 +1,6 @@
 # bRss
 
-bRss is a rss feed parser based off of the <a target="_blank" href="https://github.com/jfhovinne/jFeed/">jFeed</a> plugin.
+bRss is an rss feed parser based off of the <a target="_blank" href="https://github.com/jfhovinne/jFeed/">jFeed</a> plugin.
 
 <h2>Options:</h2>
 
