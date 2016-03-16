@@ -36,7 +36,7 @@
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script type="text/javascript" src="dist/bRss.js"></script>
+<script type="text/javascript" src="dist/bRss.min.js"></script>
 ```
 
 <p>Add this script to define the plugin options. Options that are not included will automatically default to false. This example calls 3 items from brafton.com's blog feed.</p>
