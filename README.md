@@ -35,14 +35,14 @@
 <p>First include jQuery, then the bRss script.</p>
 
 ```
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script type="text/javascript" src="dist/bRss.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="dist/bRss.js"></script>
 ```
 
 <p>Add this script to define the plugin options. Options that are not included will automatically default to false. This example calls 3 items from brafton.com's blog feed.</p>
 
 ```
-	<script type="text/javascript">
+<script type="text/javascript">
 	jQuery(function() {
 		$("#result").BraftonRss({
 		    		   url: 'http://brafton.com/blog/feed',
@@ -60,11 +60,11 @@
 		             count: '3'
 		    });
 		});
-	</script>
+</script>
 ```
 
 <p>Last, add the below code to call the feed items wherever you want them to display on the page:</p>
 
 ```
-	<div id="result"></div>
+<div id="result"></div>
 ```
