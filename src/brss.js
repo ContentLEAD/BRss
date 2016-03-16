@@ -137,22 +137,3 @@ $.fn.extend({
     });
 }
 });
-/*
-jQuery(function() {
-    $("#result").BraftonRss({
-               url: 'http://www.brafton.com/blog/feed/',
-           wrapper: true,
-       wrappername: 'brss',
-        dateformat: "fullmonths",
-             image: true,
-              date: true,
-          category: true,
-         catheader: 'Posted in: ',
-            author: true,
-      authorheader: 'By: ',
-       description: true,
-             style: 'grid',
-             count: '3'
-    });
-});
-*/
