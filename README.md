@@ -36,8 +36,8 @@
 
 <pre>
 <code>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script type="text/javascript" src="dist/bRss.js"></script>
+	"<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="dist/bRss.js"></script>"
 </code>
 </pre>
 
@@ -45,7 +45,7 @@
 
 <pre>
 <code>
-	<script type="text/javascript">
+	"<script type="text/javascript">
 	jQuery(function() {
 		$("#result").BraftonRss({
 		    		   url: 'http://brafton.com/blog/feed',
@@ -63,7 +63,7 @@
 		             count: '3'
 		    });
 		});
-	</script>
+	</script>"
 </code>
 </pre>
 
@@ -71,6 +71,6 @@
 
 <pre>
 <code>
-	<div id="result"></div>
+	"<div id="result"></div>"
 </code>
 </pre>
