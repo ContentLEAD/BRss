@@ -12,23 +12,23 @@
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script type="text/javascript" src="dist/bRss.js"></script>
+<script type="text/javascript" src="dist/bRss.min.js"></script>
 <script>
 	jQuery(function() {
 	    $("#result").BraftonRss({
-	    		   url: 'http://brafton.com/blog/feed',
+	    		   url: 'http://brafton.com/feed',
 	           wrapper: true,
 	       wrappername: 'brss',
 	        dateformat: 'fullmonths',
-	             image: true,
 	              date: true,
 	          category: true,
 	         catheader: 'Posted in: ',
 	            author: true,
+	             image: true,
 	      authorheader: 'By: ',
 	       description: true,
-	             style: 'grid',
-	             count: '3'
+	             style: 'grid6',
+	             count: '6'
 	    });
 	});
 </script>

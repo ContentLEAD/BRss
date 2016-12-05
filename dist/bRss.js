@@ -21,111 +21,77 @@ $.fn.extend({
             var html = '';
 
             if (this.wrapper) {
-                html += '<div class="'
-                + this.wrappername
-                + '">';
+                html += '<div class="' + this.wrappername + '">';
             }
 
             switch (this.style) {
                 case 'grid':
-                    html += '<style type="text/css">.item {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item img {max-width: 100%;}</style>'   
+                    html += '<style type="text/css">.item {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item img {max-width: 100%;}</style>';   
                     break;
                 case 'zrss':
-                    html += '<style type="text/css">.rssRow {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item img {max-width: 100%;}</style>'
+                    html += '<style type="text/css">.rssRow {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item img {max-width: 100%;}</style>';
                     break;
                 case 'grid4':
-                    html += '<style type="text/css">.item {float: left; width: 25%; padding: 0px 10px; box-sizing: border-box;} .item img {max-width: 100%;}</style>'
+                    html += '<style type="text/css">.item {float: left; width: 25%; padding: 0px 10px; box-sizing: border-box;} .item img {max-width: 100%;}</style>';
                     break;
                 case 'grid4box':
-                    html += '<style type="text/css">.item {float: left; width: 50%; padding: 0px 10px; box-sizing: border-box;} .item:nth-of-type(odd) {clear: both;} .item img {max-width: 100%;}</style>'
+                    html += '<style type="text/css">.item {float: left; width: 50%; padding: 0px 10px; box-sizing: border-box;} .item:nth-of-type(odd) {clear: both;} .item img {max-width: 100%;}</style>';
                     break;
                 case 'grid5':
-                    html += '<style type="text/css">.item {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item:nth-of-type(4) {clear: both; width: 50%;} .item:nth-of-type(5) {width: 50%;} .item img {max-width: 100%;}</style>'
+                    html += '<style type="text/css">.item {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item:nth-of-type(4) {clear: both; width: 50%;} .item:nth-of-type(5) {width: 50%;} .item img {max-width: 100%;}</style>';
                     break;
                 case 'grid6':
-                    html += '<style type="text/css">.item {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item:nth-of-type(4) {clear: both;} .item img {max-width: 100%;}</style>'
+                    html += '<style type="text/css">.item {float: left; width: 33.3%; padding: 0px 10px; box-sizing: border-box;} .item:nth-of-type(4) {clear: both;} .item img {max-width: 100%;}</style>';
+                    break;
                 default:
-                    html += ''
+                    html += '';
                     break;
                 }
 
-            this.container.append('<div class="rssHeader title"><h2>'
-            + '<a href="'
-            + feed.link
-            + '">'
-            + feed.title
-            + '</a>'
-            + '</h2></div>');
+            this.container.append('<div class="rssHeader title"><h2>' +
+            '<a href="' + feed.link + '">' + feed.title + '</a>' + '</h2></div>');
             
             for(var i = 0; i < feed.items.length && i < this.count; i++) {
             
                 var item = feed.items[i];
                 
-                html += '<div class="rssRow item"><h3>'
-                + '<a href="'
-                + item.link
-                + '">'
-                + item.title
-                + '</a>'
-                + '</h3>';
+                html += '<div class="rssRow item"><h3>' + '<a href="' + item.link + '">' +
+                item.title + '</a>' + '</h3>';
 
                 if(this.date) {
                     switch (this.dateformat) {
                         case 'shortdate':
-                            html += '<div class="date updated">'
-                            + item.shortdate
-                            + '</div>';
+                            html += '<div class="date updated">' + item.shortdate + '</div>';
                             break;
                         case 'fullmonths':
-                            html += '<div class="date updated">'
-                            + item.fullmonths
-                            + '</div>';
+                            html += '<div class="date updated">' + item.fullmonths + '</div>';
                             break;
                         default:
-                            html += '<div class="date updated">'
-                            + item.updated
-                            + '</div>';
+                            html += '<div class="date updated">' + item.updated + '</div>';
                             break;
                     }
                 }
 
                 if(this.category) {
-                    html += '<div class="category">'
-                    + '<strong>'
-                    + this.catheader
-                    + '</strong>'
-                    + item.category
-                    + '</div>';
+                    html += '<div class="category">' + '<strong>' + this.catheader + '</strong>' +
+                    item.category + '</div>';
                 }
 
                 if(this.author) {
-                    html += '<div class="author">'
-                    + '<strong>'
-                    + this.authorheader
-                    + '</strong>'
-                    + item.author
-                    + '</div>';
+                    html += '<div class="author">' + '<strong>' + this.authorheader + '</strong>' + 
+                    item.author + '</div>';
                 }
 
                 if(this.image) {
-                    html += '<div class="image">'
-                    + '<a target="_blank" href="'
-                    + item.link
-                    + '">'
-                    + '<img src="'
-                    + item.image
-                    + '" />'
-                    + '</a>'
-                    + '</div>';
+                    html += '<div class="image">' + '<a target="_blank" href="' + item.link + '">' +
+                    '<img src="' + item.image + '" />' + '</a>' + '</div>';
                 }
 
                 if (this.description) {
-                    html += '<div class="description">'
-                        + item.description
-                        + '</div>';
+                    html += '<div class="description">' + item.description + '</div>';
                 }
 
-                html += '</div>'
+                html += '</div>';
             }
             
             jQuery(obj.container).append(html);
@@ -138,7 +104,7 @@ $.fn.extend({
 }
 });;function JAtom(xml) {
     this._parse(xml);
-};
+}
 
 JAtom.prototype = {
     
@@ -153,7 +119,7 @@ JAtom.prototype = {
         this.language = jQuery(channel).attr('xml:lang');
         this.updated = jQuery(channel).find('updated:first').text();
         
-        this.items = new Array();
+        this.items = [];
         
         var feed = this;
         
@@ -210,12 +176,12 @@ jQuery.getFeed = function(options) {
           // Handle legacy failure option
           options.error = function(xhr, msg, e){
             options.failure(msg, e);
-          }
+          };
         } else if (jQuery.type(options.failure) === jQuery.type(options.error) === 'null') {
           // Default error behavior if failure & error both unspecified
           options.error = function(xhr, msg, e){
-            window.console&&console.log('getFeed failed to load feed', xhr, msg, e);
-          }
+            console.log('getFeed failed to load feed', xhr, msg, e);
+          };
         }
 
         return $.ajax({
@@ -243,7 +209,7 @@ jQuery.getFeed = function(options) {
 
 function JFeed(xml) {
     if (xml) this.parse(xml);
-};
+}
 
 JFeed.prototype = {
 
@@ -257,22 +223,24 @@ JFeed.prototype = {
     author: '',
     parse: function(xml) {
 
+        var feedClass;
+
         if (jQuery('channel', xml).length == 1) {
 
             this.type = 'rss';
-            var feedClass = new JRss(xml);
+            feedClass = new JRss(xml);
 
         } else if (jQuery('feed', xml).length == 1) {
 
             this.type = 'atom';
-            var feedClass = new JAtom(xml);
+            feedClass = new JAtom(xml);
         }
 
         if (feedClass) jQuery.extend(this, feedClass);
     }
 };
 
-;function JFeedItem() {};
+;function JFeedItem() {}
 
 JFeedItem.prototype = {
 
@@ -288,13 +256,13 @@ JFeedItem.prototype = {
 
 ;function JRss(xml) {
     this._parse(xml);
-};
+}
 
 JRss.prototype  = {
     
     _parse: function(xml) {
     
-        if(jQuery('rss', xml).length == 0) this.version = '1.0';
+        if(jQuery('rss', xml).length === 0) this.version = '1.0';
         else this.version = jQuery('rss', xml).eq(0).attr('version');
 
         var channel = jQuery('channel', xml).eq(0);
@@ -305,7 +273,7 @@ JRss.prototype  = {
         this.language = jQuery(channel).find('language:first').text();
         this.updated = jQuery(channel).find('lastBuildDate:first').text();
 
-        this.items = new Array();
+        this.items = [];
         
         var feed = this;
         
@@ -326,8 +294,9 @@ JRss.prototype  = {
                 item.shortdate = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
                 item.fullmonths = (fullmonths[date.getMonth()]) + ' ' + date.getDate() + ', ' + date.getFullYear();
             item.id = jQuery(this).find('guid').eq(0).text();
+            //item.image = jQuery(this).find('description').find('img').attr('url');
             item.image = jQuery(this).find('enclosure').attr('url');
-            
+
             feed.items.push(item);
 
         });

@@ -36,12 +36,12 @@ jQuery.getFeed = function(options) {
           // Handle legacy failure option
           options.error = function(xhr, msg, e){
             options.failure(msg, e);
-          }
+          };
         } else if (jQuery.type(options.failure) === jQuery.type(options.error) === 'null') {
           // Default error behavior if failure & error both unspecified
           options.error = function(xhr, msg, e){
-            window.console&&console.log('getFeed failed to load feed', xhr, msg, e);
-          }
+            console.log('getFeed failed to load feed', xhr, msg, e);
+          };
         }
 
         return $.ajax({
@@ -69,7 +69,7 @@ jQuery.getFeed = function(options) {
 
 function JFeed(xml) {
     if (xml) this.parse(xml);
-};
+}
 
 JFeed.prototype = {
 
@@ -83,15 +83,17 @@ JFeed.prototype = {
     author: '',
     parse: function(xml) {
 
+        var feedClass;
+
         if (jQuery('channel', xml).length == 1) {
 
             this.type = 'rss';
-            var feedClass = new JRss(xml);
+            feedClass = new JRss(xml);
 
         } else if (jQuery('feed', xml).length == 1) {
 
             this.type = 'atom';
-            var feedClass = new JAtom(xml);
+            feedClass = new JAtom(xml);
         }
 
         if (feedClass) jQuery.extend(this, feedClass);

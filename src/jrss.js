@@ -1,12 +1,12 @@
 function JRss(xml) {
     this._parse(xml);
-};
+}
 
 JRss.prototype  = {
     
     _parse: function(xml) {
     
-        if(jQuery('rss', xml).length == 0) this.version = '1.0';
+        if(jQuery('rss', xml).length === 0) this.version = '1.0';
         else this.version = jQuery('rss', xml).eq(0).attr('version');
 
         var channel = jQuery('channel', xml).eq(0);
@@ -17,7 +17,7 @@ JRss.prototype  = {
         this.language = jQuery(channel).find('language:first').text();
         this.updated = jQuery(channel).find('lastBuildDate:first').text();
 
-        this.items = new Array();
+        this.items = [];
         
         var feed = this;
         
@@ -38,8 +38,9 @@ JRss.prototype  = {
                 item.shortdate = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
                 item.fullmonths = (fullmonths[date.getMonth()]) + ' ' + date.getDate() + ', ' + date.getFullYear();
             item.id = jQuery(this).find('guid').eq(0).text();
+            //item.image = jQuery(this).find('description').find('img').attr('url');
             item.image = jQuery(this).find('enclosure').attr('url');
-            
+
             feed.items.push(item);
 
         });

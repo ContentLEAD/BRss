@@ -1,4 +1,4 @@
-function JFeedItem() {};
+function JFeedItem() {}
 
 JFeedItem.prototype = {
 

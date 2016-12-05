@@ -1,6 +1,6 @@
 function JAtom(xml) {
     this._parse(xml);
-};
+}
 
 JAtom.prototype = {
     
@@ -15,7 +15,7 @@ JAtom.prototype = {
         this.language = jQuery(channel).attr('xml:lang');
         this.updated = jQuery(channel).find('updated:first').text();
         
-        this.items = new Array();
+        this.items = [];
         
         var feed = this;
         
